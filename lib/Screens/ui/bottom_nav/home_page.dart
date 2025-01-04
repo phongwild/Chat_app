@@ -15,7 +15,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final tempStorage = TemporaryStorage();
   @override
   void initState() {
     _setUpNotification();
@@ -23,6 +22,7 @@ class _HomePageState extends State<HomePage> {
   }
   _setUpNotification() async {
     var token = await NotificationService().getFCMToken();
+    saveData('fcm_token', '$token');
     print(token);
   }
   @override
@@ -95,7 +95,6 @@ class _HomePageState extends State<HomePage> {
           final data = doc.data()
               as Map<String, dynamic>; // Chuyển đổi DocumentSnapshot thành Map
           final currentUser = _auth.currentUser!.email;
-          tempStorage.save('currentUser', currentUser);
           if (data['email'] == currentUser) {
             print('Email trùng khớp: ${data['email']}');
           }

@@ -50,19 +50,23 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAMRMhTuFueIYIFFi51kQTrAwaTK8_mHgQ',
-    appId: '1:164179167011:android:df723bbd2b032de6d3ae96',
-    messagingSenderId: '164179167011',
-    projectId: 'messager-5cc23',
-    storageBucket: 'messager-5cc23.firebasestorage.app',
+    apiKey: 'AIzaSyDSWEsfUiQoIK2Lwz1bhx9xJ5bnDnaHEuA',
+    appId: '1:1082178476167:android:83fb2d891485d60bf90022',
+    messagingSenderId: '1082178476167',
+    projectId: 'stayserene-f36b5',
+    databaseURL: 'https://stayserene-f36b5-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'stayserene-f36b5.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDXSN3hWBAbSxooZEy3CIIdFkmpl7EC13k',
-    appId: '1:164179167011:ios:1c430d30246168afd3ae96',
-    messagingSenderId: '164179167011',
-    projectId: 'messager-5cc23',
-    storageBucket: 'messager-5cc23.firebasestorage.app',
-    iosBundleId: 'com.example.chatApp',
+    apiKey: 'AIzaSyAkMEkTu9Xfka8DztTyHOeeEur8x-8lNiQ',
+    appId: '1:1082178476167:ios:9cb05048c6b2f7b7f90022',
+    messagingSenderId: '1082178476167',
+    projectId: 'stayserene-f36b5',
+    databaseURL: 'https://stayserene-f36b5-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'stayserene-f36b5.appspot.com',
+    androidClientId: '1082178476167-4so5grc929m0g14vqpa4qefjekpibdo2.apps.googleusercontent.com',
+    iosClientId: '1082178476167-hd1e8lhduqp2ck1mn17vk6428bh36nnu.apps.googleusercontent.com',
+    iosBundleId: 'com.example.demoApp',
   );
 }

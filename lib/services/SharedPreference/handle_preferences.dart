@@ -1,15 +1,23 @@
-class TemporaryStorage {
-  Map<String, dynamic> _storage = {}; // Map để lưu trữ tạm thời
+import 'package:shared_preferences/shared_preferences.dart';
 
-  void save(String key, dynamic value) {
-    _storage[key] = value; // Lưu dữ liệu
-  }
+Future<void> saveData(String key, String value) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.setString(key, value);
+  print('Data saved successfully');
+}
 
-  dynamic read(String key) {
-    return _storage[key]; // Đọc dữ liệu
+Future<String> getData(String key) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String? data = prefs.getString(key);
+  if (data != null) {
+    return data;
+  } else {
+    return '';
   }
+}
 
-  void delete(String key) {
-    _storage.remove(key); // Xóa dữ liệu
-  }
+Future<void> removeData(String key) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.remove(key);
+  print('Delete $key successfully');
 }

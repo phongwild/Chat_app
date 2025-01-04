@@ -1,4 +1,4 @@
-import 'package:demo_app/Screens/ui/home_page.dart';
+import 'package:demo_app/Screens/ui/bottom_nav/bottom_nav.dart';
 import 'package:demo_app/services/auth/login_or_register.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,7 @@ class AuthGate extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasData) {
-          return const HomePage();
+          return const BottomNav();
         } else if (snapshot.hasError) {
           return const Center(child: Text('An error occurred'));
         } else {

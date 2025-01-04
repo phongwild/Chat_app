@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'package:demo_app/Screens/ui/home_page.dart';
+import 'package:demo_app/Screens/ui/bottom_nav/home_page.dart';
 
 class BottomNav extends StatelessWidget {
   final User? user;
@@ -15,10 +15,10 @@ class BottomNav extends StatelessWidget {
     int _selected = 0;
     const List<Widget> _widgetOption = <Widget>[
       HomePage(),
-      Text('data'),
-      Text('More')
+      Center(child: Text('data')),
+      Center(child: Text('More'))
     ];
-    void _onItemClicked(int index) {
+    void onItemClicked(int index) {
       _selected = index;
     }
     return Scaffold(
@@ -42,7 +42,7 @@ class BottomNav extends StatelessWidget {
           )
         ],
           currentIndex: _selected,
-          onTap: _onItemClicked,
+          onTap: onItemClicked,
         ),
       ),
     );

@@ -6,7 +6,7 @@ class Message {
   final String receiverId;
   final String message;
   final Timestamp timestamp;
-  final String imageUrl;
+  final bool image;
 
   Message(
       {required this.senderId,
@@ -14,7 +14,7 @@ class Message {
       required this.receiverId,
       required this.message,
       required this.timestamp,
-      required this.imageUrl});
+      required this.image});
 
   Map<String, dynamic> toMap() {
     return {
@@ -23,7 +23,7 @@ class Message {
       'receiverId': receiverId,
       'message': message,
       'timestamp': timestamp,
-      'imageUrl': imageUrl ?? '',
+      'image': image,
     };
   }
 }
